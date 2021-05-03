@@ -1,0 +1,29 @@
+---
+Name: curl.exe
+Description: command line tool and library for transferring data with URLs
+Author: 'Sravan Ganachari'
+Created: '2021-05-03'
+Commands:
+  - Command: curl.exe --output 7z.exe --url http://7-zip.org/a/7z1604-x64.exe
+    Description: Download and save 7zip to disk in the current folder.
+    Usecase: Download file from Internet
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/techniques/T1105/
+    OperatingSystem: Windows 10 Build 17063 or later
+Full_Path:
+  - Path: c:\windows\system32\curl.exe
+  - Path: c:\windows\syswow64\curl.exe
+Code_Sample: 
+  - Code: 
+Detection: 
+  - IOC: curl.exe creating new files on disk
+  - IOC: Useragent contains 'curl/'
+Resources:
+  - Link: https://securitynews.sonicwall.com/xmlpost/curl-new-addition-to-lolbins/
+Acknowledgement:
+  - Person: Sravan Ganachari
+    Handle: '@sravan_g'
+  - Person: Sandeep Paul
+---
